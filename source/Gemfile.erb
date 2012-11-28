@@ -1,0 +1,50 @@
+source :rubygems
+
+gem 'rails' # http://api.rubyonrails.org/
+
+# db
+gem 'mongoid' # http://mongoid.org
+
+# auth
+gem 'devise' # https://github.com/plataformatec/devise
+gem 'devise-async'
+gem 'cancan' # https://github.com/ryanb/cancan
+
+# upload
+gem 'rest-client'
+gem 'carrierwave-upyun' # https://github.com/nowa/carrierwave-upyun
+
+# assets
+gem 'slim' # https://github.com/stonean/slim
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'compass'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'therubyracer'
+  gem 'uglifier', '>= 1.0.3'
+  gem 'bootstrap-sass-rails' # https://github.com/yabawock/bootstrap-sass-rails
+  gem 'jquery-rails'
+  gem 'quiet_assets'
+end
+
+# helper
+gem 'zfben_rails_rake'
+gem 'garelic' # https://github.com/jsuchal/garelic
+
+# queue
+gem 'sidekiq' # http://mperham.github.com/sidekiq/
+gem 'whenever', require: false
+
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails' # https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md
+  gem 'capybara'
+  gem 'thin'
+  gem 'capistrano', require: false
+  gem 'rvm-capistrano', require: false
+end
+
+group :production do
+  gem 'unicorn'
+end

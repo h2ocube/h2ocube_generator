@@ -1,0 +1,21 @@
+defaults: &defaults
+  hosts:
+    - 127.0.0.1:27017
+
+development:
+  sessions:
+    default:
+      <<: *defaults
+      database: <%= app_name %>_dev
+
+test:
+  sessions:
+    default:
+      <<: *defaults
+      database: <%= app_name %>_test
+
+production:
+  sessions:
+    default:
+      <<: *defaults
+      database: <%= app_name %>

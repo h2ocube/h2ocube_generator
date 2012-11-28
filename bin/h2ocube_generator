@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require File.expand_path(File.join('..', 'lib', 'h2ocube_generator.rb'), File.dirname(__FILE__))
+
+source_root = File.expand_path(File.join('..', 'source'), File.dirname(__FILE__))
+
+H2ocubeGenerator::AppGenerator.source_root source_root
+H2ocubeGenerator::AppGenerator.source_paths << Rails::Generators::AppGenerator.source_root << source_root
+H2ocubeGenerator::AppGenerator.start
